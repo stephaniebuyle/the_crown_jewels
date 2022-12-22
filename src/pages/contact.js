@@ -15,7 +15,7 @@ const ContactPage = ({
         <Layout pageTitle="Contact us">
 
             <section className="grid grid-cols-2 gap-6 text-center py-6 px-6 m-12" >
-                <article className="bg-minty-green py-12">
+                <article className="bg-minty-green py-6">
                     <h2 className="font-Roboto text-4xl font-bold text-some-kind-of-purple p-4">{contactFields.title}</h2>
                     <GatsbyImage className="object-contain h-62 w-96 rounded-lg " image={image} alt={contactFields.picture.altText} />
                 </article>
@@ -40,6 +40,15 @@ const ContactPage = ({
                     </div>
 
                 </article>
+            </section>
+            <section>
+                <form>
+                    <label>First Name</label>
+                    <label>Last Name</label>
+                    <label>Description</label>
+                    <button type="button">Send</button>
+
+                </form>
             </section>
 
         </Layout >
