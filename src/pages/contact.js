@@ -39,17 +39,22 @@ const ContactPage = ({
                         </div>
                     </div>
 
+                    <div>
+                        <form>
+                            <label>First Name</label>
+                            <label>Last Name</label>
+                            <label>Description</label>
+                            <div class="mt-1 p-2">
+                                <textarea id="description" name="description" rows="3" class="p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your message"></textarea>
+                            </div>
+                            <button className="w-16 bg-s-blue-1 text-s-rose-1 rounded-lg p-2" type="button">Send</button>
+ 
+                        </form>
+                    </div>
+
                 </article>
             </section>
-            <section>
-                <form>
-                    <label>First Name</label>
-                    <label>Last Name</label>
-                    <label>Description</label>
-                    <button type="button">Send</button>
-
-                </form>
-            </section>
+        
 
         </Layout >
     )
