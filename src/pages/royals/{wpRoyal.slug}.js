@@ -2,6 +2,9 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import {
+    polygonImage
+  } from "../../page.module.css"
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
@@ -11,22 +14,20 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
         <Layout pageTitle="Royals Template">
             <div>
                 <div className="py-6 flex flex-wrap justify-center">
-                    <div className="w-64 px-4 polygon ">
-                        <GatsbyImage className="shadow clipmax-w-full h-64 align-middle border-none" image={image} alt={royal.profilePicture.altText} />
+                    <div className="px-4 w-72 ">
+                        <GatsbyImage className={polygonImage} image={image} alt={royal.profilePicture.altText} />
                     </div>
                     <div>
-                        <h3>{royal.firstName}</h3>
+                        <h1 className=" font-Inconsolata text-6xl py-6">{royal.firstName} {royal.lastName}</h1>
+                        <div className="font-Roboto text-xl py-2 px-4 text-s-orange-1 rounded-lg font-bold" dangerouslySetInnerHTML={{ __html: royal.bio}} />
+                        <ul>
+                            <li><span>Sports: </span>{royal.sports}</li>
+                        </ul>
+                        
                     </div>
                 </div>
             </div>
-            <div className="m-12 font-Roboto">
-                <a href="#" aria-labelledby="title" className=" inset-0 bg-s-blue-1 relative py-6 px-6 rounded border-s-blue-1 group text-baby-rose">
-                    <span id="title" className=" text-xl">Send</span>
-                    <div className="inset-0 border-2 absolute py-6 px-6 bg-baby-rose text-s-blue-1 motion-safe:transition-[clip-path] motion-safe:duration-500 ease-out [clip-path:circle(20%_at_120%_120%)] group-hover:[clip-path:circle(170%_at_120%_120%)]">
-                        <span className="text-xl">Send</span>
-                    </div>
-                </a>
-            </div>
+
 
         </Layout>
     )

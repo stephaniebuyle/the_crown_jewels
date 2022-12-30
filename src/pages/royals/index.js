@@ -1,25 +1,30 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react'
 import Layout from '../../components/layout'
+import Royal from "../../components/royal"
 
-const RoyalsPage = ({ data: { allWpRoyal: { edges } } }) => {
+
+const RoyalsPage = ({ data:
+  {
+    allWpRoyal: { edges }
+  }
+
+}) => {
   return (
     <Layout pageTitle="Crown Jewels">
-      <p>A list of royals will be displayed here.</p>
-      {edges.map((item) => {
-        const royal = item.node.royalMeta;
-        const slug = item.node.slug; 
-        return (
-          <div>
 
-            <Link to={`/royals/${slug}`}>
-            
-            <p key={item.node.id}>{royal.firstName} {royal.lastName} {royal.officialTitle} {royal.house}</p>
-            <img src={item.img}></img>
-            </Link>
-          </div>
-        )
-      })}
+      <p>A list of royals will be displayed here.</p>
+      
+    
+
+
+            <div >
+              {edges.map(({ node: royal }) => (
+                <Royal key={royal.id} slug={royal.slug} royal={royal} />
+              ))}
+            </div>
+
+        
     </Layout>
   )
 }
@@ -39,7 +44,7 @@ query {
           pictureCard {
             localFile {
               childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, transformOptions: {grayscale: true})
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }

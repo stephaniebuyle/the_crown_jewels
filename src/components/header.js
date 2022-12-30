@@ -1,6 +1,7 @@
 import * as React from "react"
-import Navigation from './navigation';
+import Navigation from './navigation'
 import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -18,7 +19,14 @@ const Header = () => {
     <div>
       <header >
         <div className="flex items-center bg-baby-rose border-b-2">
-          <h1 className="font-Inconsolata text-some-kind-of-purple text-6xl font-bold py-6 px-6">{data.site.siteMetadata.title}</h1>
+        <StaticImage 
+            alt="logo crown jewels"
+            src="../images/logo6.png"
+            className="ml-6 w-10"
+          />
+          <h1 className="font-Poppins text-some-kind-of-purple text-3xl font-bold py-6 ml-2">{data.site.siteMetadata.title}</h1>
+        
+      
           <Navigation />
         
         </div>

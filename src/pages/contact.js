@@ -44,8 +44,8 @@ const ContactPage = ({
                             <label>First Name</label>
                             <label>Last Name</label>
                             <label>Description</label>
-                            <div class="mt-1 p-2">
-                                <textarea id="description" name="description" rows="3" class="p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your message"></textarea>
+                            <div className="mt-1 p-2">
+                                <textarea id="description" name="description" rows="3" className="p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your message"></textarea>
                             </div>
                             <button className="w-16 bg-s-blue-1 text-s-rose-1 rounded-lg p-2" type="button">Send</button>
  
@@ -53,6 +53,14 @@ const ContactPage = ({
                     </div>
 
                 </article>
+                <div className="m-12 font-Roboto">
+                <a href="#" aria-labelledby="title" className=" inset-0 bg-s-blue-1 relative py-6 px-6 rounded border-s-blue-1 group text-baby-rose">
+                    <span id="title" className=" text-xl">Send</span>
+                    <div className="inset-0 border-2 absolute py-6 px-6 bg-baby-rose text-s-blue-1 motion-safe:transition-[clip-path] motion-safe:duration-500 ease-out [clip-path:circle(20%_at_120%_120%)] group-hover:[clip-path:circle(170%_at_120%_120%)]">
+                        <span className="text-xl">Send</span>
+                    </div>
+                </a>
+            </div>
             </section>
         
 
