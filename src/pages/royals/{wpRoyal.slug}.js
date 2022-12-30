@@ -19,11 +19,12 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                     </div>
                     <div>
                         <h1 className=" font-Inconsolata text-6xl py-6">{royal.firstName} {royal.lastName}</h1>
-                        <div className="font-Roboto text-xl py-2 px-4 text-s-orange-1 rounded-lg font-bold" dangerouslySetInnerHTML={{ __html: royal.bio}} />
+                        <div className="font-Roboto">
+                        <div className="text-xl py-2 px-4 text-s-orange-1 rounded-lg font-bold" dangerouslySetInnerHTML={{ __html: royal.bio}} />
                         <ul>
-                            <li><span>Sports: </span>{royal.sports}</li>
+                            <li><span className="font-bold">Sports: </span>{royal.sports.join(", ")}</li>
                         </ul>
-                        
+                        </div>
                     </div>
                 </div>
             </div>

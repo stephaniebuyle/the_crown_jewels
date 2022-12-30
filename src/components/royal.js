@@ -1,26 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {
+    polygonImage
+} from "./royal.module.css"
 
 const Royal = ({ royal, slug }) => {
 
     const cardImage = getImage(royal.royalMeta.pictureCard.localFile)
 
     return (
-        <Link to={slug}>
+        <Link to={slug} className="font-Roboto odd:bg-s-orange bg-minty-green drop-shadow-lg">
             <section className="flex">
-                <div className="w-1/3 p-6 bg-gray-100 flex flex-col">
-                    <GatsbyImage
-                        className='h-64 w-64'
+                <article className="flex flex-col object-cover justify-center mb-4 w-72 drop-shadow-md">
+                    <div className="hover:opacity-50"><GatsbyImage
+                        className={polygonImage}
                         image={cardImage}
                         alt={royal.royalMeta.pictureCard.altText}
-                    />
-                    <div className="flex-1">
+                    /></div>
+                    <div className="flex-1 text-center">
                         <p>
                             {royal.royalMeta.firstName} {royal.royalMeta.lastName}
                         </p>
                     </div>
-                </div>
+                </article>
             </section>
 
 

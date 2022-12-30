@@ -24,20 +24,21 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <>
-      <div class="flex flex-col h-screen bg-baby-rose">
+      <div class="flex flex-col h-screen bg-baby-rose justify-between">
         <title> {pageTitle} | {data.site.siteMetadata.title}</title>
         <Header />
         <body>
-          <main>
+          <main className="px-4">
             {/* <h1 className="text-3xl font-Spectral underline"> {data.site.siteMetadata.title}</h1> */}
             {children}
           </main>
         </body>
-      </div>
+      
       <Footer
         siteTitle={data.site.siteMetadata.title}
         companyInfo={data.wpPage.contactFields}
       />
+      </div>
     </>
   )
 }

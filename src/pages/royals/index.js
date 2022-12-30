@@ -18,7 +18,7 @@ const RoyalsPage = ({ data:
     
 
 
-            <div >
+            <div className="place-items-center grid grid-cols-3 gap-y-20">
               {edges.map(({ node: royal }) => (
                 <Royal key={royal.id} slug={royal.slug} royal={royal} />
               ))}
