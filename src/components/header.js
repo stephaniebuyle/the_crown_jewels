@@ -18,7 +18,7 @@ const Header = () => {
 
     <div>
       <header >
-        <div className="flex items-center bg-baby-rose border-b-2">
+        <div className="flex items-center bg-baby-rose">
         <StaticImage 
             alt="logo crown jewels"
             src="../images/logo6.png"

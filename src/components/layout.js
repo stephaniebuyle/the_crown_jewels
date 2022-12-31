@@ -28,7 +28,7 @@ const Layout = ({ pageTitle, children }) => {
         <title> {pageTitle} | {data.site.siteMetadata.title}</title>
         <Header />
         <body>
-          <main className="px-4">
+          <main className="pt-6 pb-12">
             {/* <h1 className="text-3xl font-Spectral underline"> {data.site.siteMetadata.title}</h1> */}
             {children}
           </main>

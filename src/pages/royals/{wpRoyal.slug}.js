@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {
     polygonImage
-  } from "../../page.module.css"
+} from "../../page.module.css"
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
@@ -20,10 +20,10 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                     <div>
                         <h1 className=" font-Inconsolata text-6xl py-6">{royal.firstName} {royal.lastName}</h1>
                         <div className="font-Roboto">
-                        <div className="text-xl py-2 px-4 text-s-orange-1 rounded-lg font-bold" dangerouslySetInnerHTML={{ __html: royal.bio}} />
-                        <ul>
-                            <li><span className="font-bold">Sports: </span>{royal.sports.join(", ")}</li>
-                        </ul>
+                            <div className="text-xl py-2 px-4 text-s-orange-1 rounded-lg font-bold" dangerouslySetInnerHTML={{ __html: royal.bio }} />
+                            <ul>
+                                <li><span className="font-bold">Sports: </span>{royal.sports.join(", ")}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
