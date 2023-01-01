@@ -8,15 +8,52 @@ import {
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
-    const image = getImage(royal.profilePicture.localFile);
+    const profile1 = getImage(royal.profilePicture.localFile);
+    const profile2 = getImage(royal.profilePictureExtra.localFile);
+    const profile3 = getImage(royal.profilePictureOptional?.localFile);
 
     return (
         <Layout pageTitle="Royals Template">
-            <div>
-                <div className="py-6 flex flex-wrap justify-center">
-                    <div className="px-4 w-72 ">
-                        <GatsbyImage className={polygonImage} image={image} alt={royal.profilePicture.altText} />
+            <div className="grid grid-cols-5 h-screen">
+                <div className="col-span-2">
+
+
+                    <div className="grid grid-cols-2 p-8">
+                        <div>
+                            {profile1 && (
+                                <GatsbyImage
+                                    className="w-72 h-72 object-fit hover:skew-y-6 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer"
+                                    image={profile1}
+                                    alt={royal.profilePicture.altText}
+                                />
+                            )
+                            }
+
+                        </div>
+                        <div>
+                            {profile2 && (
+                                <GatsbyImage
+                                    className="w-72 h-72 object-fit hover:skew-y-6 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer"
+                                    image={profile2}
+                                    alt={royal.profilePictureExtra.altText}
+                                />
+                            )
+                            }
+                        </div>
                     </div>
+                    <div className="flex justify-center">
+                        {profile3 && (
+                            <GatsbyImage
+                                className="w-72 h-72 object-fit hover:skew-y-6 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer"
+                                image={profile3}
+                                alt={royal.profilePictureOptional.altText}
+                            />
+                        )
+                        }
+                    </div>
+                </div>
+
+                <div className="col-span-3">
                     <div>
                         <h1 className=" font-Inconsolata text-6xl py-6">{royal.firstName} {royal.lastName}</h1>
                         <div className="font-Roboto">
@@ -54,6 +91,22 @@ export const query = graphql`
                 sports
                 title
                 profilePicture {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(placeholder: BLURRED)
+                      }
+                    }
+                    altText
+                }
+                profilePictureExtra {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(placeholder: BLURRED)
+                      }
+                    }
+                    altText
+                }
+                profilePictureOptional {
                     localFile {
                       childImageSharp {
                         gatsbyImageData(placeholder: BLURRED)
