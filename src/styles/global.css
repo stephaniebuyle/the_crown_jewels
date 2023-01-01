@@ -5,7 +5,11 @@
 
     .polygon-style {
  
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+        clip-path: polygon(0 0, 82% 0, 51% 100%, 0% 100%);
  
     }
  }
+
+
+
+ 

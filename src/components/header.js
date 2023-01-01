@@ -17,7 +17,7 @@ const Header = () => {
   return (
 
     <div>
-      <header >
+      <header className="mt-4">
         <div className="flex items-center bg-baby-rose">
         <StaticImage 
             alt="logo crown jewels"
