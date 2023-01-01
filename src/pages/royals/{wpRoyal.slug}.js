@@ -66,21 +66,36 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                     <div className="">
 
                         <div className="ml-16 font-Roboto">
-                            <div className="text-xl py-2 text-s-orange-1 rounded-lg font-bold" dangerouslySetInnerHTML={{ __html: royal.bio }} />
-                            
-                            <p><span className="font-bold">Name</span>: {royal.firstName} {royal.lastName}</p>
-                            <p><span className="font-bold">House</span>: {royal.house}</p>
-                            <p><span className="font-bold">Official title</span>: {royal.officialTitle}</p>
-                            <div className="flex">
-                                <span className="font-bold mr-1">Education: </span>
+                            <div className="text-xl py-2 text-s-orange-1 rounded-lg font-bold"
+                                dangerouslySetInnerHTML={{ __html: royal.bio }} />
+
+                            <p><span className="font-bold underline">Name:</span> {royal.firstName} {royal.lastName}</p>
+                            <p><span className="font-bold underline">House:</span> {royal.house}</p>
+                            <p><span className="font-bold underline">Official title:</span> {royal.officialTitle}</p>
+                            <p><span className="font-bold underline">Age:</span> {royal.age}</p>
+                           
+                                <span className="font-bold underline">Education: </span>
                                 <div
                                     className=""
                                     dangerouslySetInnerHTML={{ __html: royal.education }}
                                 />
+                           
+
+
+                            <span className="font-bold underline">Sport(s): </span>{royal.sports.join(", ")}
+
+                            <div className="font-bold underline">Known scandals: </div>
+                            <div className="relative mt-6">
+                                <div className="absolute bg-minty-green w-[80%] rounded-lg z-10">
+                                    <div className="p-4" dangerouslySetInnerHTML={{ __html: royal.knownScandals }}>
+                                    </div>
+                                </div>
+                                <div className="text-s-orange absolute bg-s-orange w-[80%]  rounded-lg z-5 rotate-3 opacity-70">
+                                    <div className="p-4" dangerouslySetInnerHTML={{ __html: royal.knownScandals }}>
+                                    </div>
+                                </div>
+
                             </div>
-
-
-                            <span className="font-bold">Sport(s): </span>{royal.sports.join(", ")}
 
 
                         </div>
