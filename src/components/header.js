@@ -17,14 +17,16 @@ const Header = () => {
   return (
 
     <div>
-      <header className="mt-4 mb-12">
+      <header className="mt-4 mb-6 pt-6">
         <div className="flex items-center bg-baby-rose">
-        <StaticImage 
-            alt="logo crown jewels"
-            src="../images/logo6.png"
-            className="ml-6 w-10"
+ 
+          <h1 className="font-Poppins text-some-kind-of-purple text-3xl font-bold ml-6">{data.site.siteMetadata.title.toUpperCase()}</h1>
+          
+          <StaticImage 
+            alt="logo"
+            src="../images/logo5c.png"
+            className="ml-4 w-10"
           />
-          <h1 className="font-Poppins text-some-kind-of-purple text-3xl font-bold py-6 ml-2">{data.site.siteMetadata.title.toUpperCase()}</h1>
         
       
           <Navigation />

@@ -17,24 +17,26 @@ const Royal = ({
 
     return (
         <Link to={slug} className="font-Roboto odd:bg-s-orange bg-minty-green drop-shadow-lg">
-            <section className="flex">
+            <section className="flex pb-4">
                 <article className="flex flex-col object-cover justify-center mb-4 w-80 drop-shadow-md">
                     <div className="hover:opacity-50"><GatsbyImage
                         className={polygonImage}
                         image={cardImage}
                         alt={royal.royalMeta.pictureCard.altText}
                     /></div>
-                    <div className="flex-1 text-center">
+                    <div className="flex-1 ">
+                        <div className="ml-4 mb-4">
                         {royalTitles.map((title, i) => (
-                            <div className="w-24 ml-4 mb-4" key={i}>
-                                <p className="border border-some-kind-of-purple rounded-lg font-bold p-2" >{title.name} {i + 1 < title.length && "- "} </p>
-                            </div>
+                            
+                                <button key={i} className="border border-some-kind-of-purple rounded-lg font-bold p-2 mx-1" >{title.name} {i + 1 < title.length && "- "} </button>
+                            
                         ))}
-                        <p className="font-bold">
+                        </div>
+                        <p className="font-bold text-center">
                             {royal.royalMeta.firstName.toUpperCase()} {royal.royalMeta.lastName.toUpperCase()}
                         
                         </p>
-                        <p>
+                        <p className="text-center">
                             {royal.royalMeta.house}
                         </p>
                     </div>

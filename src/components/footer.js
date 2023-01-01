@@ -13,7 +13,7 @@ const Footer = ({ siteTitle, companyInfo }) => {
             <StaticImage 
             alt="footer heart"
             src="../images/heart-trans.png"
-            className="absolute right-12 -top-16 z-50"
+            className="absolute right-12 -top-12 z-50 w-32"
           />
                 <section>
                     <p>{siteTitle}</p>

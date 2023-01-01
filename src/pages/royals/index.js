@@ -29,7 +29,7 @@ const RoyalsPage = ({ data:
           />
           </div>
         </article>
-        <article className="font-Spectral text-xl w-40 w-[600px] absolute right-32 bottom-40 bg-opacity-25 bg-minty-green p-12 ">
+        <article className="font-Spectral text-some-kind-of-purple text-xl w-40 w-[600px] absolute right-32 bottom-40 bg-opacity-25 bg-minty-green p-12 ">
           <h1 className="font-bold text-6xl" >{royalsFields.title}</h1>
           <div className='p-6 text-2xl text-center'
             dangerouslySetInnerHTML={{ __html: royalsFields.description, }}
@@ -39,7 +39,7 @@ const RoyalsPage = ({ data:
 
       <section className="">
 
-        <div className="place-items-center grid grid-cols-3 gap-y-20 mt-12">
+        <div className="place-items-center grid grid-cols-3 gap-y-20 mt-12 mb-12">
           {edges.map(({ node: royal }) => (
             <Royal key={royal.id} slug={royal.slug} royal={royal} titles={royal.titles} />
           ))}
