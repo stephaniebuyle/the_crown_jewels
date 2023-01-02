@@ -15,9 +15,10 @@ const ContactPage = ({
         <Layout pageTitle="Contact us">
 
             <section className="font-Neuton grid grid-cols-2 gap-6 text-center px-6" >
-                <article className="bg-minty-green py-6">
-                    <h2 className="text-4xl font-bold text-some-kind-of-purple p-4">{contactFields.title}</h2>
-                    <GatsbyImage className="object-contain h-62 w-96 rounded-lg " image={image} alt={contactFields.picture.altText} />
+
+                <article className="">
+                    <h2 className="mb-4 text-4xl font-bold text-some-kind-of-purple">{contactFields.title}</h2>
+                    <GatsbyImage className="object-contain rounded-lg " image={image} alt={contactFields.picture.altText} />
                     <div>
                         <a href={`mailto:${contactFields.email}`}>
                             {contactFields.email}
@@ -64,7 +65,7 @@ const ContactPage = ({
                             <div className="mx-auto">
                                 <label label className="block mb-2 tracking-widest" >Email</label>
                                 <input
-                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                    className="tracking-wide text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
                                     type="email" name="email" required={true} placeholder="Email"></input>
                             </div>
                             <div className="mx-auto">
