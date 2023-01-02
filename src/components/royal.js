@@ -16,8 +16,9 @@ const Royal = ({
     //console.log(`Nobele titel ${royalTitle}`)
 
     return (
-        <Link to={slug} className="font-Roboto  odd:bg-s-orange bg-minty-green drop-shadow-lg">
-            <section className="flex pb-4 ">
+        <div className="odd:bg-s-orange bg-minty-green w-80 font-Roboto drop-shadow-lg">
+        <Link to={slug} className="">
+            <section className="flex pb-4 w-80">
                 <article className="flex flex-col object-cover justify-center mb-4 w-80 drop-shadow-md">
                     <div className="hover:opacity-50"><GatsbyImage
                         className={polygonImage}
@@ -51,6 +52,7 @@ const Royal = ({
 
             </article>
         </Link>
+        </div>
     )
 }
 

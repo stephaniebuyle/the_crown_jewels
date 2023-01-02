@@ -36,17 +36,17 @@ const HomePage = ({
       </section>
 
       <section >
-        <h2>Featured Royals</h2>
+        <h2 className="text-3xl">Featured Royals</h2>
         <p>
-        All of our artists are veterans in the industery and have proven themselves time and time again. Every week we put out 3 of our artists in the spotlight section, you can check out their individual portfolio’s and book them by contacting us. Send an email to book@artistagency.com or call us on 0123456789.
+          All of our artists are veterans in the industery and have proven themselves time and time again. Every week we put out 3 of our artists in the spotlight section, you can check out their individual portfolio’s and book them by contacting us. Send an email to book@artistagency.com or call us on 0123456789.
         </p>
-        <div>
+        <div className="grid grid-cols-3 place-items-center">
           {homeFields.featuredRoyals.map(royal => {
-            return <Royal slug={`royals/${royal.slug}`} key={royal.id} royal={royal} titles={royal.titles}/>
+            return <Royal slug={`royals/${royal.slug}`} key={royal.id} royal={royal} titles={royal.titles} />
           })}
         </div>
       </section>
-        
+
     </Layout>
   )
 }
