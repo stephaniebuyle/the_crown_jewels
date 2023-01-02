@@ -27,44 +27,48 @@ const HomePage = ({
           />
           <h1 className="text-4xl mb-6 text-center"> {homeFields.title.toUpperCase()}</h1>
         </article>
+
         <article className="flex flex-row justify-center">
 
           <div className="relative h-[500px] w-[980px]">
 
-            <a
-              target="__blank"
-              href={homeFields.callToAction.url}
-            >
-              <button className=" absolute left-[320px] bottom-[10px] mx-1 animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
-            </a>
-
-            <div className="absolute top-0 left-[0px] w-96 h-96 bg-minty-green rounded-full z-20 opacity-90"></div>
-            <div>
+            <div className="absolute top-0 left-[0px] bg-minty-green w-96 h-96 rounded-full z-20 opacity-90"></div>
+            <div  className="absolute top-[50px] left-[140px] w-96 h-96 rounded-full z-30">
               <GatsbyImage
-                className="absolute top-[50px] left-[140px] w-96 h-96 rounded-full to-transparent bg-gradient-to-b z-30"
+                className="w-96 h-96 rounded-full"
                 image={image1}
                 alt={homeFields.picture1.altText}
               />
             </div>
 
-
             <div className="absolute top-0 left-[280px] w-96 h-96 bg-some-kind-of-purple rounded-full z-20 opacity-90"></div>
-            <div>
-              <GatsbyImage
-                className="absolute top-[50px] left-[420px] w-96 h-96 rounded-full to-transparent bg-gradient-to-b z-30"
+
+            <div className="absolute top-[50px] left-[450px] -left-[px]  z-40">
+              <GatsbyImage 
+                className="w-96 h-96 rounded-full"
                 image={image2}
                 alt={homeFields.picture2.altText}
               />
             </div>
             <div className="absolute top-0 left-[600px] w-96 h-96 bg-s-orange rounded-full z-20 opacity-90"></div>
           </div>
+
         </article>
+      
+        <a
+          target="__blank"
+          href={homeFields.callToAction.url}
+          className="flex justify-center"
+        >
+          <button className="tracking-widest  animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
+        </a>
+
       </section>
 
-      <section className="mx-6">
-        <h2 className="text-6xl font-Neuton text-some-kind-of-purple">Featured Royals</h2>
-        <p>
-          All of our artists are veterans in the industery and have proven themselves time and time again. Every week we put out 3 of our artists in the spotlight section, you can check out their individual portfolio’s and book them by contacting us. Send an email to book@artistagency.com or call us on 0123456789.
+      <section className="mt-8 mx-6 font-Neuton">
+        <h1 className="uppercase text-4xl mb-6 text-center">Featured Royals</h1>
+        <p className="font-Poppins italic w-[80%] mx-auto text-s-orange mb-8 text-lg text-center">
+          Tired of swiping left on peasants? Upgrade to a royal match on our site.
         </p>
         <div className="grid grid-cols-3 place-items-center">
           {homeFields.featuredRoyals.map(royal => {

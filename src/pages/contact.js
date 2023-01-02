@@ -16,7 +16,7 @@ const ContactPage = ({
 
             <form name="contact" method="POST" data-netlify="true">
                 <section className="font-Neuton text-baby-rose flex flex-col items-center bg-s-black bg-opacity-70 pb-24 -mb-24" >
-                    <div className="text-xl text-baby-rose p-6 w-[60%] text-center italic"
+                    <div className=" text-xl text-baby-rose p-6 w-[60%] text-center italic"
                         dangerouslySetInnerHTML={{
                             __html: contactFields.description,
                         }}
@@ -81,7 +81,7 @@ const ContactPage = ({
 
                         </div>
                     </div>
-                    <div className="text-center italic">
+                    <div className="text-center text-xl italic">
                         <p className="underline">Also reachable via: </p>
                         <a href={`mailto:${contactFields.email}`}>
                             {contactFields.email}

@@ -16,10 +16,10 @@ const Royal = ({
     //console.log(`Nobele titel ${royalTitle}`)
 
     return (
-        <div className="odd:bg-s-orange bg-minty-green w-80 font-Roboto drop-shadow-lg">
+        <div className="odd:bg-s-orange bg-minty-green w-[80%]  font-Roboto drop-shadow-lg">
         <Link to={slug} className="">
-            <section className="flex pb-4 w-80">
-                <article className="flex flex-col object-cover justify-center mb-4 w-80 drop-shadow-md">
+            <section className="flex pb-4 w-full">
+                <article className="flex flex-col object-cover justify-center mb-4 w-full  drop-shadow-md">
                     <div className="hover:opacity-50"><GatsbyImage
                         className={polygonImage}
                         image={cardImage}
