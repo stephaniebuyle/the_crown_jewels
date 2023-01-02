@@ -10,33 +10,60 @@ const HomePage = ({
   },
 }) => {
 
-  const image = getImage(homeFields.picture.localFile)
+  const image1 = getImage(homeFields.picture1.localFile)
+  const image2 = getImage(homeFields.picture2.localFile)
 
   return (
     <Layout pageTitle="Welcome to Crown Jewels!">
 
-      <section>
+      <section className="mx-6">
         <article>
-          <h1> {homeFields.title}</h1>
+
+
+          <h1 className="text-6xl font-Neuton text-some-kind-of-purple"> {homeFields.title.toUpperCase()}</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: homeFields.description,
             }}
           />
-          <a target="__blank" href={homeFields.callToAction.url}>
-            {homeFields.callToAction.title}
-          </a>
+         
         </article>
-        <div>
-          <GatsbyImage
-            image={image}
-            alt={homeFields.picture.altText}
-          />
-        </div>
+        <article className="flex flex-row justify-center">
+          
+          <div className="relative h-[500px] w-[980px]">
+
+          <a 
+          target="__blank" 
+          href={homeFields.callToAction.url}
+          >
+            <button className=" absolute left-[320px] bottom-[10px] mx-1 animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
+          </a>
+
+            <div className="absolute top-0 left-[0px] w-96 h-96 bg-minty-green rounded-full z-20 opacity-90"></div>
+            <div>
+              <GatsbyImage
+                className="absolute top-[50px] left-[140px] w-96 h-96 rounded-full to-transparent bg-gradient-to-b z-30"
+                image={image1}
+                alt={homeFields.picture1.altText}
+              />
+            </div>
+         
+
+            <div className="absolute top-0 left-[280px] w-96 h-96 bg-some-kind-of-purple rounded-full z-20 opacity-90"></div>
+            <div>
+              <GatsbyImage
+                className="absolute top-[50px] left-[420px] w-96 h-96 rounded-full to-transparent bg-gradient-to-b z-30"
+                image={image2}
+                alt={homeFields.picture2.altText}
+              />
+            </div>
+            <div className="absolute top-0 left-[600px] w-96 h-96 bg-s-orange rounded-full z-20 opacity-90"></div>
+          </div>
+        </article>
       </section>
 
-      <section >
-        <h2 className="text-3xl">Featured Royals</h2>
+      <section className="mx-6">
+        <h2 className="text-6xl font-Neuton text-some-kind-of-purple">Featured Royals</h2>
         <p>
           All of our artists are veterans in the industery and have proven themselves time and time again. Every week we put out 3 of our artists in the spotlight section, you can check out their individual portfolio’s and book them by contacting us. Send an email to book@artistagency.com or call us on 0123456789.
         </p>
@@ -86,7 +113,15 @@ query {
       }
       title
       description
-      picture {
+      picture1 {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
+          }
+        }
+      }
+      picture2 {
         altText
         localFile {
           childImageSharp {
