@@ -14,55 +14,91 @@ const ContactPage = ({
     return (
         <Layout pageTitle="Contact us">
 
-            <section className="grid grid-cols-2 gap-6 text-center py-6 px-6 m-12" >
+            <section className="font-Neuton grid grid-cols-2 gap-6 text-center px-6" >
                 <article className="bg-minty-green py-6">
-                    <h2 className="font-Roboto text-4xl font-bold text-some-kind-of-purple p-4">{contactFields.title}</h2>
+                    <h2 className="text-4xl font-bold text-some-kind-of-purple p-4">{contactFields.title}</h2>
                     <GatsbyImage className="object-contain h-62 w-96 rounded-lg " image={image} alt={contactFields.picture.altText} />
+                    <div>
+                        <a href={`mailto:${contactFields.email}`}>
+                            {contactFields.email}
+                        </a>
+                        <a href={`tel:${contactFields.phoneNumber}`}>
+                            {contactFields.phoneNumber}
+                        </a>
+                        <p>{`${contactFields.address}, ${contactFields.zipCode} ${contactFields.city}`}</p>
+
+                    </div>
                 </article>
                 <article>
 
-                    <div className="">
-                        <div className="bg-some-kind-of-purple text-baby-rose p-4 border-2 rounded-lg"
+                    <div className="mb-4">
+                        <div className="text-xl bg-some-kind-of-purple text-baby-rose p-6 border-2 rounded-lg"
                             dangerouslySetInnerHTML={{
                                 __html: contactFields.description,
                             }}
                         />
-                        <div>
-                            <a href={`mailto:${contactFields.email}`}>
-                                {contactFields.email}
-                            </a>
-                            <a href={`tel:${contactFields.phoneNumber}`}>
-                                {contactFields.phoneNumber}
-                            </a>
-                            <p>{`${contactFields.address}, ${contactFields.zipCode} ${contactFields.city}`}</p>
 
-                        </div>
                     </div>
 
-                    <div>
-                        <form>
-                            <label>First Name</label>
-                            <label>Last Name</label>
-                            <label>Description</label>
-                            <div className="mt-1 p-2">
-                                <textarea id="description" name="description" rows="3" className="p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your message"></textarea>
+                    <form className="text-lg uppercase border-2 rounded-lg text-baby-rose bg-some-kind-of-purple py-6 px-4 " name="contact" method="POST" data-netlify="true">
+
+                        <div className="grid grid-cols-2 gap-6 mb-6 items-center ">
+                            <div className="mx-auto">
+
+                                <label className="block mb-2 tracking-widest" >First Name</label>
+                                <input
+                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                    type="text" name="first_name" required={true} placeholder="First Name">
+
+                                </input>
                             </div>
-                            <button className="w-16 bg-s-blue-1 text-s-rose-1 rounded-lg p-2" type="button">Send</button>
- 
-                        </form>
-                    </div>
+                            <div className="mx-auto">
+                                <label className="block mb-2 tracking-widest">Last Name</label>
+                                <input
+                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                    type="text" name="last_name" required={true} placeholder="Last Name">
+
+                                </input>
+                            </div>
+
+                            <div className="mx-auto">
+                                <label label className="block mb-2 tracking-widest" >Email</label>
+                                <input
+                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                    type="email" name="email" required={true} placeholder="Email"></input>
+                            </div>
+                            <div className="mx-auto">
+                                <label className="block mb-2 tracking-widest">Subject</label>
+                                <input
+                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                    type="text" name="subject" required={true} placeholder="Subject">
+
+                                </input>
+
+                            </div>
+                        </div>
+
+
+                        <div className="mx-auto">
+                            <label className="block mb-2 tracking-widest">Message</label>
+                            <textarea 
+                                id="message" name="message" placeholder="Your message" required={true}
+                                className="mb-6 text-base font-Poppins text-s-orange p-2 mt-1 block w-full min-h-32 rounded-md" >
+                            </textarea>
+                        </div>
+                        <button
+                            className="font-Poppins uppercase mx-1 -skew-x-12 bg-s-orange text-lg px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out"
+                            type="button">
+                            Send
+                        </button>
+
+                    </form>
+
 
                 </article>
-                <div className="m-12 font-Roboto">
-                <a href="#" aria-labelledby="title" className=" inset-0 bg-s-blue-1 relative py-6 px-6 rounded border-s-blue-1 group text-baby-rose">
-                    <span id="title" className=" text-xl">Send</span>
-                    <div className="inset-0 border-2 absolute py-6 px-6 bg-baby-rose text-s-blue-1 motion-safe:transition-[clip-path] motion-safe:duration-500 ease-out [clip-path:circle(20%_at_120%_120%)] group-hover:[clip-path:circle(170%_at_120%_120%)]">
-                        <span className="text-xl">Send</span>
-                    </div>
-                </a>
-            </div>
+
             </section>
-        
+
 
         </Layout >
     )

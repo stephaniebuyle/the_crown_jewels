@@ -29,7 +29,7 @@ const RoyalsPage = ({ data:
           />
           </div>
         </article>
-        <article className="font-Spectral text-some-kind-of-purple text-xl w-40 w-[600px] absolute right-32 bottom-40 bg-opacity-25 bg-minty-green p-12 ">
+        <article className="font-Neuton text-some-kind-of-purple text-xl w-40 w-[600px] absolute right-32 bottom-40 bg-opacity-25 bg-minty-green p-12 ">
           <h1 className="font-bold text-6xl" >{royalsFields.title}</h1>
           <div className='p-6 text-2xl text-center'
             dangerouslySetInnerHTML={{ __html: royalsFields.description, }}
