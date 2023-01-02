@@ -15,13 +15,23 @@ const Footer = ({ siteTitle, companyInfo }) => {
                         className="z-50 w-32"
                     />
                 </div>
-                <section>
-                    <p>{siteTitle}</p>
-                    <p>Copyright 2022-23</p>
-                </section>
-                <section>
-                    <p>{`${companyInfo.address}, ${companyInfo.zipCode} ${companyInfo.city}`}</p>
-                </section>
+                <div className="grid grid-cols-4">
+                    <section>
+
+                        <p>Copyright 2022-23</p>
+                    </section>
+                    <section className="">
+                        <p>{siteTitle}</p>
+                        <p>{`${companyInfo.address}`}</p>
+                        <p>{`${companyInfo.zipCode} ${companyInfo.city}`}</p>
+                    </section>
+                    <section>
+                        socials
+                    </section>
+                    <section>
+                        Home<br />Royals<br />Contact<br />
+                    </section>
+                </div>
             </footer>
         </div>
     )

@@ -15,8 +15,8 @@ const ContactPage = ({
         <Layout pageTitle="Contact us">
 
             <form name="contact" method="POST" data-netlify="true">
-                <section className="font-Neuton text-baby-rose flex flex-col items-center bg-s-black bg-opacity-70 pb-24 -mb-24" >
-                    <div className=" text-xl text-baby-rose p-6 w-[60%] text-center italic"
+                <section className="font-Poppins text-baby-rose flex flex-col items-center bg-s-black bg-opacity-70 pb-24 -mb-24" >
+                    <div className=" font-Neuton text-xl text-baby-rose p-6 w-[60%] text-center italic"
                         dangerouslySetInnerHTML={{
                             __html: contactFields.description,
                         }}
@@ -27,36 +27,36 @@ const ContactPage = ({
                         <div className="absolute top-[100px] left-[65px]">
                             <div className="mb-4">
 
-                                <label for="first_name" className="block mb-2 tracking-widest" >First Name
+                                <label for="first_name" className="font-bold block mb-2 tracking-widest" >First Name
                                     <input
-                                        className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        className="text-base text-s-orange block text-center italic p-2 w-60"
                                         type="text" id="first_name" name="first_name" required={true} placeholder="First Name">
 
                                     </input>
                                 </label>
                             </div>
                             <div className="">
-                                <label for="email" className="block mb-2 tracking-widest" >Email
+                                <label for="email" className="font-bold block mb-2 tracking-widest" >Email
                                     <input
-                                        className="tracking-wide text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        className="tracking-wide text-base text-s-orange block text-center italic p-2 w-60"
                                         type="email" id="email" name="email" required={true} placeholder="Email"></input>
                                 </label>
                             </div>
                         </div>
                         <div className="absolute top-[100px] right-[75px]">
                             <div className="mb-4">
-                                <label for="last_name" className="block mb-2 tracking-widest">Last Name
+                                <label for="last_name" className="font-bold block mb-2 tracking-widest">Last Name
                                     <input
-                                        className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        className="text-base text-s-orange block text-center italic p-2 w-60"
                                         type="text" id="last_name" name="last_name" required={true} placeholder="Last Name">
 
                                     </input>
                                 </label>
                             </div>
                             <div className="">
-                                <label for="subject" className="block mb-2 tracking-widest">Subject
+                                <label for="subject" className="font-bold block mb-2 tracking-widest">Subject
                                     <input
-                                        className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        className="text-base text-s-orange block text-center italic p-2 w-60"
                                         type="text" id="subject" name="subject" required={true} placeholder="Subject">
 
                                     </input>
@@ -66,10 +66,10 @@ const ContactPage = ({
                         </div>
                         <div className="absolute top-[500px] left-[100px] w-[600px] flex flex-col items-center">
                             <div className="w-full">
-                                <label className="block mb-2 tracking-widest">Message
+                                <label className="font-bold block mb-2 tracking-widest">Message
                                     <textarea
                                         id="message" name="message" placeholder="Your message" required={true}
-                                        className="mb-6 text-base font-Poppins text-s-orange p-2 mt-1 block w-full min-h-32 rounded-md" >
+                                        className="mb-6 text-base text-s-orange p-2 mt-1 block w-full min-h-32 rounded-md" >
                                     </textarea>
                                 </label>
                             </div>
@@ -81,7 +81,7 @@ const ContactPage = ({
 
                         </div>
                     </div>
-                    <div className="text-center text-xl italic">
+                    <div className="font-Neuton text-center text-xl italic">
                         <p className="underline">Also reachable via: </p>
                         <a href={`mailto:${contactFields.email}`}>
                             {contactFields.email}
