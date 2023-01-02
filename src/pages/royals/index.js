@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby';
+import { graphql} from 'gatsby';
 import * as React from 'react'
 import Layout from '../../components/layout'
 import Royal from "../../components/royal"

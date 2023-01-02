@@ -1,6 +1,4 @@
 import * as React from "react"
-import Navigation from './navigation';
-import { useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 

@@ -27,47 +27,51 @@ const ContactPage = ({
                         <div className="absolute top-[100px] left-[65px]">
                             <div className="mb-4">
 
-                                <label className="block mb-2 tracking-widest" >First Name</label>
-                                <input
-                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
-                                    type="text" name="first_name" required={true} placeholder="First Name">
+                                <label for="first_name" className="block mb-2 tracking-widest" >First Name
+                                    <input
+                                        className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        type="text" id="first_name" name="first_name" required={true} placeholder="First Name">
 
-                                </input>
+                                    </input>
+                                </label>
                             </div>
                             <div className="">
-                                <label label className="block mb-2 tracking-widest" >Email</label>
-                                <input
-                                    className="tracking-wide text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
-                                    type="email" name="email" required={true} placeholder="Email"></input>
+                                <label for="email" className="block mb-2 tracking-widest" >Email
+                                    <input
+                                        className="tracking-wide text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        type="email" id="email" name="email" required={true} placeholder="Email"></input>
+                                </label>
                             </div>
                         </div>
                         <div className="absolute top-[100px] right-[75px]">
                             <div className="mb-4">
-                                <label className="block mb-2 tracking-widest">Last Name</label>
-                                <input
-                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
-                                    type="text" name="last_name" required={true} placeholder="Last Name">
+                                <label for="last_name" className="block mb-2 tracking-widest">Last Name
+                                    <input
+                                        className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        type="text" id="last_name" name="last_name" required={true} placeholder="Last Name">
 
-                                </input>
+                                    </input>
+                                </label>
                             </div>
                             <div className="">
-                                <label className="block mb-2 tracking-widest">Subject</label>
-                                <input
-                                    className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
-                                    type="text" name="subject" required={true} placeholder="Subject">
+                                <label for="subject" className="block mb-2 tracking-widest">Subject
+                                    <input
+                                        className="text-base font-Poppins text-s-orange block text-center italic p-2 w-60"
+                                        type="text" id="subject" name="subject" required={true} placeholder="Subject">
 
-                                </input>
-
+                                    </input>
+                                </label>
                             </div>
 
                         </div>
                         <div className="absolute top-[500px] left-[100px] w-[600px] flex flex-col items-center">
                             <div className="w-full">
-                                <label className="block mb-2 tracking-widest">Message</label>
-                                <textarea
-                                    id="message" name="message" placeholder="Your message" required={true}
-                                    className="mb-6 text-base font-Poppins text-s-orange p-2 mt-1 block w-full min-h-32 rounded-md" >
-                                </textarea>
+                                <label className="block mb-2 tracking-widest">Message
+                                    <textarea
+                                        id="message" name="message" placeholder="Your message" required={true}
+                                        className="mb-6 text-base font-Poppins text-s-orange p-2 mt-1 block w-full min-h-32 rounded-md" >
+                                    </textarea>
+                                </label>
                             </div>
                             <button
                                 className="font-Poppins uppercase -skew-x-12 bg-s-orange text-lg px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out"
@@ -81,7 +85,7 @@ const ContactPage = ({
                         <p className="underline">Also reachable via: </p>
                         <a href={`mailto:${contactFields.email}`}>
                             {contactFields.email}
-                        </a><br/>
+                        </a><br />
                         <a href={`tel:${contactFields.phoneNumber}`}>
                             {contactFields.phoneNumber}
                         </a>
