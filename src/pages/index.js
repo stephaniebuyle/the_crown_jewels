@@ -16,28 +16,27 @@ const HomePage = ({
   return (
     <Layout pageTitle="Welcome to Crown Jewels!">
 
-      <section className="mx-6">
+      <section className="mx-8 font-Neuton text-some-kind-of-purple">
         <article>
 
-
-          <h1 className="text-6xl font-Neuton text-some-kind-of-purple"> {homeFields.title.toUpperCase()}</h1>
           <div
+            className="font-Poppins italic w-[80%] mx-auto text-s-orange mb-8 text-lg text-center"
             dangerouslySetInnerHTML={{
               __html: homeFields.description,
             }}
           />
-         
+          <h1 className="text-4xl mb-6 text-center"> {homeFields.title.toUpperCase()}</h1>
         </article>
         <article className="flex flex-row justify-center">
-          
+
           <div className="relative h-[500px] w-[980px]">
 
-          <a 
-          target="__blank" 
-          href={homeFields.callToAction.url}
-          >
-            <button className=" absolute left-[320px] bottom-[10px] mx-1 animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
-          </a>
+            <a
+              target="__blank"
+              href={homeFields.callToAction.url}
+            >
+              <button className=" absolute left-[320px] bottom-[10px] mx-1 animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
+            </a>
 
             <div className="absolute top-0 left-[0px] w-96 h-96 bg-minty-green rounded-full z-20 opacity-90"></div>
             <div>
@@ -47,7 +46,7 @@ const HomePage = ({
                 alt={homeFields.picture1.altText}
               />
             </div>
-         
+
 
             <div className="absolute top-0 left-[280px] w-96 h-96 bg-some-kind-of-purple rounded-full z-20 opacity-90"></div>
             <div>
