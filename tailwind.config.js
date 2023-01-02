@@ -28,7 +28,8 @@ module.exports = {
       's-white-1': "#EFEAD5",
       's-green-1': '#C9B55A', 
       's-green-2': '#8A7F4D', 
-      's-rose-2': '#D69475'
+      's-rose-2': '#D69475',
+      's-black': '#010101'
 
     }
   },
