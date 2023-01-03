@@ -28,19 +28,6 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     return (
         <Layout pageTitle="Royals Template">
             <div className={modalPopup()}>
-                {/*
-                <button className="uppercase absolute top-5 right-[50%] p-4 bg-some-kind-of-purple text-baby-rose z-20 mx-1 -skew-x-12 font-bol hover:scale-110 transition-all ease-in-out" onClick={() => { setModalOpen(false) }}>
-                    Close
-                </button>
-                <div className="">
-                    <GatsbyImage
-                        className="border-2 border-some-kind-of-purple"
-                        image={profileList[activeImg]}
-                        alt={royal.profilePicture.altText}
-
-                    />
-                </div>
-                */}
                 <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen} profilesAlts={profileAlts} />
             </div>
             <div className="grid grid-cols-8 min-h-screen">
@@ -84,14 +71,13 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
                 </div>
 
-                <div className="col-span-6 bg-some-kind-of-purple rounded-2xl p-4 mr-4 pb-24">
+                <div className="col-span-6 bg-some-kind-of-purple rounded-2xl p-4 mr-8 pb-32">
                     <div className="w-full h-96">
                         <div className="relative w-full">
                             <div className="absolute left-[55px] top-[100px] z-50 max-w-xl"><h1 className="font-Inconsolata  text-6xl py-6 shadow-minty-green drop-shadow-md">{royal.firstName} {royal.lastName}</h1></div>
                             <div className="absolute top-0 left-[0px] w-72 h-72 bg-minty-green rounded-full z-40 opacity-90"></div>
                             <div className="absolute top-[50px] left-[140px] w-72 h-72 bg-s-orange rounded-full z-30 opacity-90"></div>
                             <div className="absolute top-0 left-[280px] w-72 h-72 bg-baby-rose rounded-full z-20 opacity-90"></div>
-
                             <div className="absolute top-[50px] right-12">
                                 {pictureCard && (
                                     <GatsbyImage
@@ -109,18 +95,15 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
                     <div className="pr-6">
 
-                        <div className="ml-16 font-Roboto text-baby-rose">
+                        <div className="ml-16 font-Poppins text-baby-rose">
                             <div className="text-justify text-xl py-2 text-s-orange-1 rounded-lg font-bold my-2"
                                 dangerouslySetInnerHTML={{ __html: royal.bio }} />
 
                             <p className="my-2"><span className="font-bold underline">Name:</span> {royal.firstName} {royal.lastName}</p>
                             <p className="my-2"><span className="font-bold underline">House:</span> {royal.house}</p>
                             <p className="my-2"><span className="font-bold underline">Origin:</span> {royal.origin}</p>
-
-
                             <p className="my-2"><span className="font-bold underline">Official title:</span> {royal.officialTitle}</p>
                             <p className="my-2"><span className="font-bold underline">Age:</span> {royal.age}</p>
-
                             <p className="my-2"><span className="font-bold underline">Succession Ranking:</span> {royal.rankingInSuccession}</p>
 
                             <span className="font-bold underline my-2">Education: </span>
@@ -135,7 +118,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
                             <span className="font-bold underline my-2">Sport(s)</span>: {royal.sports.join(", ")}
 
-                            <div className="font-bold underline my-2">Known scandals: </div>
+                            <div className="font-bold underline my-2">Known scandal(s): </div>
                             <div className="relative mt-8">
                                 <div className="text-s-orange absolute bg-baby-rose w-[80%] rounded-lg z-10 drop-shadow-lg">
                                     <div className="p-4" dangerouslySetInnerHTML={{ __html: royal.knownScandals }}>
