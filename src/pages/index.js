@@ -70,7 +70,7 @@ const HomePage = ({
         <p className="font-Poppins italic w-[80%] mx-auto text-s-orange mb-8 text-lg text-center">
           Tired of swiping left on peasants? Upgrade to a royal match on our site.
         </p>
-        <div className="grid grid-cols-3 place-items-center">
+        <div className="grid grid-cols-3 gap-y-12 place-items-center">
           {homeFields.featuredRoyals.map(royal => {
             return <Royal slug={`royals/${royal.slug}`} key={royal.id} royal={royal} titles={royal.titles} />
           })}

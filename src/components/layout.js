@@ -17,6 +17,9 @@ const Layout = ({ pageTitle, children }) => {
           address
           city
           zipCode
+          facebook
+          instagram
+          twitter
         }
       }
     }

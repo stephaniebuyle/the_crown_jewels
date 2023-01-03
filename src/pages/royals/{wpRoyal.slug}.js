@@ -1,6 +1,7 @@
 import * as React from 'react'
+import {useState} from 'react'
 import Layout from '../../components/layout'
-import { graphql } from 'gatsby'
+import { graphql} from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
@@ -10,18 +11,40 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     const profile3 = getImage(royal.profilePictureOptional?.localFile);
     const pictureCard = getImage(royal.pictureCard.localFile);
 
+    const [modalOpen, setModalOpen] = useState(false); 
+
+    //open close state hidden div
+    //gallery props [profile1,profile2,profile3] , active-image : number 0 1 2
+    //h-screen w-screen
+    //active image state 
+    //next prev button
+    //gatsby component
+
+    const modalPopup = () => {
+        if(modalOpen)
+        return "absolute left-5 top-5 w-[98%] h-[600px] bg-s-orange z-[60]"
+        else
+        return "absolute left-5 top-5 w-[98%] h-[600px] bg-s-orange z-[60] hidden"
+    }
+
     return (
         <Layout pageTitle="Royals Template">
-            <div className="grid grid-cols-8 min-h-screen">
+            <div className={modalPopup()}>
+                <button onClick={()=>{setModalOpen(false)}}>
+                    Close
+                </button>
+            </div>
+            <div className="grid grid-cols-8 min-h-screen mr-6">
                 <div className="col-span-2">
                     <div className="relative mx-16">
-                        <div>
+                        <div onClick={() => setModalOpen(true)} >
 
                             {profile1 && (
                                 <GatsbyImage
-                                    className="w-72 h-72 mb-4 object-fit hover:skew-y-6 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
+                                    className="w-72 h-72 mb-4 object-fit hover:scale-110 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
                                     image={profile1}
                                     alt={royal.profilePicture.altText}
+                                    
                                 />
                             )
                             }
@@ -29,7 +52,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                         <div>
                             {profile2 && (
                                 <GatsbyImage
-                                    className="w-72 h-72 mb-4 object-fit hover:skew-y-6 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
+                                    className="w-72 h-72 mb-4 object-fit hover:scale-110 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
                                     image={profile2}
                                     alt={royal.profilePictureExtra.altText}
                                 />
@@ -39,7 +62,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                         <div className="">
                             {profile3 && (
                                 <GatsbyImage
-                                    className="w-72 h-72 mb-4  object-fit hover:skew-y-6 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
+                                    className="w-72 h-72 mb-4  object-fit hover:scale-110 transition-all ease-in-out rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
                                     image={profile3}
                                     alt={royal.profilePictureOptional.altText}
                                 />
@@ -76,7 +99,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                     <div className="pr-6">
 
                         <div className="ml-16 font-Roboto text-baby-rose">
-                            <div className="text-2xl py-2 text-s-orange-1 rounded-lg font-bold my-2"
+                            <div className="text-justify text-xl py-2 text-s-orange-1 rounded-lg font-bold my-2"
                                 dangerouslySetInnerHTML={{ __html: royal.bio }} />
 
                             <p className="my-2"><span className="font-bold underline">Name:</span> {royal.firstName} {royal.lastName}</p>
