@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Layout from '../../components/layout'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import FancyBox from '../../components/fancybox'
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
@@ -14,6 +15,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [activeImg, setActiveImg] = useState(0);
     const profileList = [profile1, profile2, profile3];
+    const profileAlts = [royal.profilePicture.altText, royal.profilePictureExtra.altText, royal.profilePictureOptional.altText ]
 
     //open close state hidden div
     //gallery props [profile1,profile2,profile3] , active-image : number 0 1 2
@@ -32,6 +34,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     return (
         <Layout pageTitle="Royals Template">
             <div className={modalPopup()}>
+                {/*
                 <button className="uppercase absolute top-5 right-[50%] p-4 bg-some-kind-of-purple text-baby-rose z-20 mx-1 -skew-x-12 font-bol hover:scale-110 transition-all ease-in-out" onClick={() => { setModalOpen(false) }}>
                     Close
                 </button>
@@ -43,7 +46,8 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
                     />
                 </div>
-                <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen}/>
+                */}
+                <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen} profilesAlts={profileAlts}/>
             </div>
             <div className="grid grid-cols-8 min-h-screen mr-6">
                 <div className="col-span-2">
