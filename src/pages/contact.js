@@ -76,7 +76,7 @@ const ContactPage = ({
                             <input type="hidden" name="form-name" value="contact" />
                             <button
                                 className="font-Poppins uppercase -skew-x-12 bg-s-orange text-lg px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out"
-                                type="button">
+                                type="submit">
                                 Send
                             </button>
 

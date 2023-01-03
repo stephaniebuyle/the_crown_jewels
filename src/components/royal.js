@@ -4,6 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
     polygonImage
 } from "./royal.module.css"
+import {
+    RiMoneyDollarBoxFill
+} from 'react-icons/ri';
 
 const Royal = ({
     royal,
@@ -14,6 +17,26 @@ const Royal = ({
     const cardImage = getImage(royal.royalMeta.pictureCard.localFile)
     // const nobleTitle = royal
     //console.log(`Nobele titel ${royalTitle}`)
+
+    const netWorth = royal.royalMeta.estimatedNetWorth
+
+    const showRichness = () => {
+        if (netWorth <= 10000000) {
+            return <div className="flex flex-row justify-center text-some-kind-of-purple"><RiMoneyDollarBoxFill className="pl-2 text-4xl" /></div>
+        }
+        else if (netWorth > 10000000 && netWorth < 50000000) {
+            return (
+             <div className="flex flex-row justify-center text-some-kind-of-purple">
+                <RiMoneyDollarBoxFill className="pl-2 text-4xl"/>
+                <RiMoneyDollarBoxFill className="pl-2 text-4xl"/>
+            </div>)
+        }
+        else {
+            return <div className="flex flex-row justify-center text-some-kind-of-purple"><RiMoneyDollarBoxFill className="pl-2 text-4xl"/><RiMoneyDollarBoxFill className="pl-2 text-4xl" /><RiMoneyDollarBoxFill className="pl-2 text-4xl" /></div>
+        }
+    }
+
+    
 
     return (
         <div className="odd:bg-s-orange bg-minty-green w-[80%] font-Poppins text-lg drop-shadow-lg">
@@ -40,6 +63,10 @@ const Royal = ({
                             </p>
                             <p className="text-center">
                                 {royal.royalMeta.house}
+
+                            </p>
+                            <p>
+                                {showRichness()} 
                             </p>
                         </div>
 
@@ -48,10 +75,7 @@ const Royal = ({
                 </section>
 
 
-                <article>
-                    {/*royal.royalMeta.firstName && <p>{royal.royalMeta.firstName}</p>*/}
 
-                </article>
             </Link>
         </div>
     )

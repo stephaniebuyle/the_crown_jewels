@@ -16,7 +16,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [activeImg, setActiveImg] = useState(0);
     const profileList = [profile1, profile2, profile3];
-    const profileAlts = [royal.profilePicture.altText, royal.profilePictureExtra.altText, royal.profilePictureOptional?.altText ]
+    const profileAlts = [royal.profilePicture.altText, royal.profilePictureExtra.altText, royal.profilePictureOptional?.altText]
 
     const modalPopup = () => {
         if (modalOpen)
@@ -41,7 +41,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                     />
                 </div>
                 */}
-                <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen} profilesAlts={profileAlts}/>
+                <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen} profilesAlts={profileAlts} />
             </div>
             <div className="grid grid-cols-8 min-h-screen">
                 <div className="col-span-2">
@@ -92,15 +92,16 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                             <div className="absolute top-[50px] left-[140px] w-72 h-72 bg-s-orange rounded-full z-30 opacity-90"></div>
                             <div className="absolute top-0 left-[280px] w-72 h-72 bg-baby-rose rounded-full z-20 opacity-90"></div>
 
-
-                            {pictureCard && (
-                                <GatsbyImage
-                                    className="absolute top-[50px] right-12 w-72 h-72 bg-some-kind-of-purple rounded-full to-transparent bg-gradient-to-b"
-                                    image={pictureCard}
-                                    alt={royal.pictureCard.altText}
-                                />
-                            )
-                            }
+                            <div className="absolute top-[50px] right-12">
+                                {pictureCard && (
+                                    <GatsbyImage
+                                        className="w-72 h-72 bg-some-kind-of-purple rounded-full"
+                                        image={pictureCard}
+                                        alt={royal.pictureCard.altText}
+                                    />
+                                )
+                                }
+                            </div>
 
 
                         </div>

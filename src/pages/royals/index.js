@@ -76,6 +76,7 @@ query {
             firstName
             lastName
             officialTitle
+            estimatedNetWorth
             house
             pictureCard {
               localFile {

@@ -94,6 +94,8 @@ query {
             officialTitle
             firstName
             lastName
+            house
+            estimatedNetWorth
             pictureCard {
               altText
               localFile {
