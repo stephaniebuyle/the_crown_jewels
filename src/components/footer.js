@@ -14,7 +14,7 @@ const Footer = ({ siteTitle, companyInfo }) => {
 
             <footer className="bg-some-kind-of-purple text-baby-rose font-Roboto px-4 py-8 relative">
                 <Link to="/">
-                    <section className="absolute right-12 -top-14">
+                    <section className="absolute right-12 -top-16">
                         <StaticImage
                             alt="footer heart"
                             src="../images/logo5c.png"
@@ -23,7 +23,7 @@ const Footer = ({ siteTitle, companyInfo }) => {
                     </section>
                 </Link>
 
-                <section className="grid grid-cols-4">
+                <section className="grid grid-cols-4 place-items-center">
                     <article>
                         <p>Copyright 2022-23</p>
                         <p>Stephanie Buyle - CMS Development</p>

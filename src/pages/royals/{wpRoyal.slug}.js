@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { useState } from 'react'
 import Layout from '../../components/layout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import FancyBox from '../../components/fancybox'
+
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
@@ -15,14 +16,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [activeImg, setActiveImg] = useState(0);
     const profileList = [profile1, profile2, profile3];
-    const profileAlts = [royal.profilePicture.altText, royal.profilePictureExtra.altText, royal.profilePictureOptional.altText ]
-
-    //open close state hidden div
-    //gallery props [profile1,profile2,profile3] , active-image : number 0 1 2
-    //h-screen w-screen
-    //active image state 
-    //next prev button
-    //gatsby component
+    const profileAlts = [royal.profilePicture.altText, royal.profilePictureExtra.altText, royal.profilePictureOptional?.altText ]
 
     const modalPopup = () => {
         if (modalOpen)
@@ -49,9 +43,9 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                 */}
                 <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen} profilesAlts={profileAlts}/>
             </div>
-            <div className="grid grid-cols-8 min-h-screen mr-6">
+            <div className="grid grid-cols-8 min-h-screen">
                 <div className="col-span-2">
-                    <div className="relative mx-16">
+                    <div className="relative mx-16 flex flex-col items-center">
                         <div onClick={() => { setModalOpen(true); setActiveImg(0) }} >
 
                             {profile1 && (
@@ -77,13 +71,14 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                         <div onClick={() => { setModalOpen(true); setActiveImg(2) }} >
                             {profile3 && (
                                 <GatsbyImage
-                                    className="w-72 h-72 mb-4  object-fit hover:scale-110 transition-all ease-in-out rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
+                                    className="w-72 h-72 mb-4 object-fit hover:scale-110 transition-all ease-in-out rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
                                     image={profile3}
                                     alt={royal.profilePictureOptional.altText}
                                 />
                             )
                             }
                         </div>
+                        <Link className="" to='/royals'><button className="uppercase -skew-x-12 bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out">Back</button></Link>
                     </div>
 
 
