@@ -1,7 +1,7 @@
 import * as React from 'react'
-import {useState} from 'react'
+import { useState } from 'react'
 import Layout from '../../components/layout'
-import { graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
@@ -11,7 +11,9 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     const profile3 = getImage(royal.profilePictureOptional?.localFile);
     const pictureCard = getImage(royal.pictureCard.localFile);
 
-    const [modalOpen, setModalOpen] = useState(false); 
+    const [modalOpen, setModalOpen] = useState(false);
+    const [activeImg, setActiveImg] = useState(0);
+    const profileList = [profile1, profile2, profile3];
 
     //open close state hidden div
     //gallery props [profile1,profile2,profile3] , active-image : number 0 1 2
@@ -21,35 +23,44 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
     //gatsby component
 
     const modalPopup = () => {
-        if(modalOpen)
-        return "absolute left-5 top-5 w-[98%] h-[600px] bg-s-orange z-[60]"
+        if (modalOpen)
+            return "absolute left-5 top-5 w-[98%] h-[600px] z-[60] relative"
         else
-        return "absolute left-5 top-5 w-[98%] h-[600px] bg-s-orange z-[60] hidden"
+            return "absolute left-5 top-5 w-[98%] h-[600px] z-[60] hidden relative"
     }
 
     return (
         <Layout pageTitle="Royals Template">
             <div className={modalPopup()}>
-                <button onClick={()=>{setModalOpen(false)}}>
+                <button className="uppercase absolute top-5 right-[50%] p-4 bg-some-kind-of-purple text-baby-rose z-20 mx-1 -skew-x-12 font-bol hover:scale-110 transition-all ease-in-out" onClick={() => { setModalOpen(false) }}>
                     Close
                 </button>
+                <div className="">
+                    <GatsbyImage
+                        className="border-2 border-some-kind-of-purple"
+                        image={profileList[activeImg]}
+                        alt={royal.profilePicture.altText}
+
+                    />
+                </div>
+                <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen}/>
             </div>
             <div className="grid grid-cols-8 min-h-screen mr-6">
                 <div className="col-span-2">
                     <div className="relative mx-16">
-                        <div onClick={() => setModalOpen(true)} >
+                        <div onClick={() => { setModalOpen(true); setActiveImg(0) }} >
 
                             {profile1 && (
                                 <GatsbyImage
                                     className="w-72 h-72 mb-4 object-fit hover:scale-110 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
                                     image={profile1}
                                     alt={royal.profilePicture.altText}
-                                    
+
                                 />
                             )
                             }
                         </div>
-                        <div>
+                        <div onClick={() => { setModalOpen(true); setActiveImg(1) }} >
                             {profile2 && (
                                 <GatsbyImage
                                     className="w-72 h-72 mb-4 object-fit hover:scale-110 rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
@@ -59,7 +70,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                             )
                             }
                         </div>
-                        <div className="">
+                        <div onClick={() => { setModalOpen(true); setActiveImg(2) }} >
                             {profile3 && (
                                 <GatsbyImage
                                     className="w-72 h-72 mb-4  object-fit hover:scale-110 transition-all ease-in-out rounded-lg drop-shadow-lg transition-all duration-500 ease-in-out cursor-pointer "
@@ -81,8 +92,8 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                             <div className="absolute top-0 left-[0px] w-72 h-72 bg-minty-green rounded-full z-40 opacity-90"></div>
                             <div className="absolute top-[50px] left-[140px] w-72 h-72 bg-s-orange rounded-full z-30 opacity-90"></div>
                             <div className="absolute top-0 left-[280px] w-72 h-72 bg-baby-rose rounded-full z-20 opacity-90"></div>
-                            
-                            
+
+
                             {pictureCard && (
                                 <GatsbyImage
                                     className="absolute top-[50px] right-12 w-72 h-72 bg-some-kind-of-purple rounded-full to-transparent bg-gradient-to-b"
@@ -91,7 +102,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                                 />
                             )
                             }
-                         
+
 
                         </div>
                     </div>
@@ -105,11 +116,11 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                             <p className="my-2"><span className="font-bold underline">Name:</span> {royal.firstName} {royal.lastName}</p>
                             <p className="my-2"><span className="font-bold underline">House:</span> {royal.house}</p>
                             <p className="my-2"><span className="font-bold underline">Origin:</span> {royal.origin}</p>
-                            
+
 
                             <p className="my-2"><span className="font-bold underline">Official title:</span> {royal.officialTitle}</p>
                             <p className="my-2"><span className="font-bold underline">Age:</span> {royal.age}</p>
-                     
+
                             <p className="my-2"><span className="font-bold underline">Succession Ranking:</span> {royal.rankingInSuccession}</p>
 
                             <span className="font-bold underline my-2">Education: </span>
@@ -176,7 +187,7 @@ export const query = graphql`
                 profilePicture {
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED)
+                        gatsbyImageData(quality: 100, placeholder: BLURRED)
                       }
                     }
                     altText
@@ -184,7 +195,7 @@ export const query = graphql`
                 profilePictureExtra {
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED)
+                        gatsbyImageData(quality: 100, placeholder: BLURRED)
                       }
                     }
                     altText
@@ -192,7 +203,7 @@ export const query = graphql`
                 profilePictureOptional {
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED)
+                        gatsbyImageData(quality: 100, placeholder: BLURRED)
                       }
                     }
                     altText
@@ -200,7 +211,7 @@ export const query = graphql`
                 pictureCard {
                     localFile {
                       childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED)
+                        gatsbyImageData(quality: 100, placeholder: BLURRED)
                       }
                     }
                     altText
