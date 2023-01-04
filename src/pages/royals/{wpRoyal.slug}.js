@@ -74,7 +74,7 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
                 </article>
 
-                <article className="col-span-6 bg-some-kind-of-purple rounded-2xl p-4 mr-20 pb-52">
+                <article className="col-span-6 bg-some-kind-of-purple rounded-2xl p-4 mr-20 pb-60">
                     <div className="w-full h-96">
                         <div className="relative w-full">
                             {/* cirkels */}
