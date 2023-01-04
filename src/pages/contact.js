@@ -16,7 +16,7 @@ const ContactPage = ({
 
             <form name="contact" method="POST" data-netlify="true">
                 <section className="font-Poppins text-baby-rose flex flex-col items-center bg-s-black bg-opacity-70 pb-24 -mb-24" >
-                    <div className=" font-Neuton text-xl text-baby-rose p-6 w-[60%] text-center italic"
+                    <div className=" font-Neuton text-xl text-baby-rose p-6 w-[60%] text-center "
                         dangerouslySetInnerHTML={{
                             __html: contactFields.description,
                         }}
@@ -29,7 +29,7 @@ const ContactPage = ({
 
                                 <label for="first_name" className="font-bold block mb-2 tracking-wide" >First Name
                                     <input
-                                        className="text-base text-s-orange block text-center italic p-2 w-60"
+                                        className="text-base text-s-orange block text-center p-2 w-60"
                                         type="text" id="first_name" name="first_name" required={true} placeholder="First Name">
 
                                     </input>
@@ -38,7 +38,7 @@ const ContactPage = ({
                             <div className="">
                                 <label for="email" className="font-bold block mb-2 tracking-wide" >Email
                                     <input
-                                        className="tracking-wide text-base text-s-orange block text-center italic p-2 w-60"
+                                        className="tracking-wide text-base text-s-orange block text-center p-2 w-60"
                                         type="email" id="email" name="email" required={true} placeholder="Email"></input>
                                 </label>
                             </div>
@@ -47,7 +47,7 @@ const ContactPage = ({
                             <div className="mb-4">
                                 <label for="last_name" className="font-bold block mb-2 tracking-wide">Last Name
                                     <input
-                                        className="text-base text-s-orange block text-center italic p-2 w-60"
+                                        className="text-base text-s-orange block text-center p-2 w-60"
                                         type="text" id="last_name" name="last_name" required={true} placeholder="Last Name">
 
                                     </input>
@@ -56,7 +56,7 @@ const ContactPage = ({
                             <div className="">
                                 <label for="subject" className="font-bold block mb-2 tracking-wide">Subject
                                     <input
-                                        className="text-base text-s-orange block text-center italic p-2 w-60"
+                                        className="text-base text-s-orange block text-center p-2 w-60"
                                         type="text" id="subject" name="subject" required={true} placeholder="Subject">
 
                                     </input>
@@ -82,7 +82,7 @@ const ContactPage = ({
 
                         </div>
                     </div>
-                    <div className="font-Neuton text-center text-xl italic">
+                    <div className="font-Neuton text-center text-xl">
                         <p className="underline">Also reachable via: </p>
                         <a href={`mailto:${contactFields.email}`}>
                             {contactFields.email}

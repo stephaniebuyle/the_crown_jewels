@@ -3,7 +3,7 @@ import Header from './header'
 import Footer from './footer'
 import { useStaticQuery, graphql } from 'gatsby'
 
-
+// Footer & Header worden geïmporteerd 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -29,18 +29,17 @@ const Layout = ({ pageTitle, children }) => {
     <>
       <div class="flex flex-col h-full bg-baby-rose justify-between">
         <title> {pageTitle} | {data.site.siteMetadata.title}</title>
-        <Header />
+        <Header siteTitle={data.site.siteMetadata.title}/>
         <body>
           <main className="pt-6 pb-12 mb-12">
-            {/* <h1 className="text-3xl font-Spectral underline"> {data.site.siteMetadata.title}</h1> */}
             {children}
           </main>
         </body>
-      
-      <Footer
-        siteTitle={data.site.siteMetadata.title}
-        companyInfo={data.wpPage.contactFields}
-      />
+
+        <Footer
+          siteTitle={data.site.siteMetadata.title}
+          companyInfo={data.wpPage.contactFields}
+        />
       </div>
     </>
   )

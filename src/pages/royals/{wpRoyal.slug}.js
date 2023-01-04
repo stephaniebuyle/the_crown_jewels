@@ -5,14 +5,16 @@ import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import FancyBox from '../../components/fancybox'
 
-
+// FancyBox wordt geïmporteerd 
 const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
+    // Gatsby images 
     const profile1 = getImage(royal.profilePicture.localFile);
     const profile2 = getImage(royal.profilePictureExtra.localFile);
     const profile3 = getImage(royal.profilePictureOptional?.localFile);
     const pictureCard = getImage(royal.pictureCard.localFile);
 
+    // states en functie voor zelfgemaakte "fancybox"
     const [modalOpen, setModalOpen] = useState(false);
     const [activeImg, setActiveImg] = useState(0);
     const profileList = [profile1, profile2, profile3];
@@ -27,11 +29,12 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
     return (
         <Layout pageTitle="Royals Template">
-            <div className={modalPopup()}>
+            <section className={modalPopup()}>
                 <FancyBox profiles={profileList} active={activeImg} callbackSetModal={setModalOpen} profilesAlts={profileAlts} />
-            </div>
-            <div className="grid grid-cols-8 min-h-screen">
-                <div className="col-span-2">
+            </section>
+
+            <section className="grid grid-cols-8 min-h-screen">
+                <article className="col-span-2">
                     <div className="relative mx-16 flex flex-col items-center">
                         <div onClick={() => { setModalOpen(true); setActiveImg(0) }} >
 
@@ -69,12 +72,13 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                     </div>
 
 
-                </div>
+                </article>
 
-                <div className="col-span-6 bg-some-kind-of-purple rounded-2xl p-4 mr-8 pb-32">
+                <article className="col-span-6 bg-some-kind-of-purple rounded-2xl p-4 mr-20 pb-52">
                     <div className="w-full h-96">
                         <div className="relative w-full">
-                            <div className="absolute left-[55px] top-[100px] z-50 max-w-xl"><h1 className="font-Inconsolata  text-6xl py-6 shadow-minty-green drop-shadow-md">{royal.firstName} {royal.lastName}</h1></div>
+                            {/* cirkels */}
+                            <div className="absolute left-[55px] top-[100px] z-50 max-w-xl"><h1 className="font-Neuton text-6xl py-6 shadow-minty-green drop-shadow-md">{royal.firstName} {royal.lastName}</h1></div>
                             <div className="absolute top-0 left-[0px] w-72 h-72 bg-minty-green rounded-full z-40 opacity-90"></div>
                             <div className="absolute top-[50px] left-[140px] w-72 h-72 bg-s-orange rounded-full z-30 opacity-90"></div>
                             <div className="absolute top-0 left-[280px] w-72 h-72 bg-baby-rose rounded-full z-20 opacity-90"></div>
@@ -88,19 +92,18 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
                                 )
                                 }
                             </div>
-
-
                         </div>
                     </div>
 
                     <div className="pr-6">
-
+                        {/* specificaties */}
                         <div className="ml-16 font-Poppins text-baby-rose">
                             <div className="text-justify text-xl py-2 text-s-orange-1 rounded-lg font-bold my-2"
                                 dangerouslySetInnerHTML={{ __html: royal.bio }} />
 
                             <p className="my-2"><span className="font-bold underline">Name:</span> {royal.firstName} {royal.lastName}</p>
                             <p className="my-2"><span className="font-bold underline">House:</span> {royal.house}</p>
+                            <p className="my-2"><span className="font-bold underline">Gender:</span> {royal.gender}</p>
                             <p className="my-2"><span className="font-bold underline">Origin:</span> {royal.origin}</p>
                             <p className="my-2"><span className="font-bold underline">Official title:</span> {royal.officialTitle}</p>
                             <p className="my-2"><span className="font-bold underline">Age:</span> {royal.age}</p>
@@ -134,16 +137,8 @@ const RoyalPage = ({ data: { wpRoyal: { royalMeta: royal } } }) => {
 
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
+                </article>
+            </section>
         </Layout>
     )
 }

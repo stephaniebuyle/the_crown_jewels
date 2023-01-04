@@ -12,9 +12,6 @@ const Navigation = () => {
                     <Link className="" to="/royals">Royals</Link>
                 </li>
                 <li className="mx-1 -skew-x-12 bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out">
-                    <Link className="" to="/about">About</Link>
-                </li>
-                <li className="mx-1 -skew-x-12 bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out">
                     <Link className="" to="/contact">Contact</Link>
                 </li>
             </ul>

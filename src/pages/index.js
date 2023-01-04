@@ -4,6 +4,7 @@ import Royal from "../components/royal"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
+// Royal wordt geïmporteerd 
 const HomePage = ({
   data: {
     wpPage: { homeFields },
@@ -15,12 +16,10 @@ const HomePage = ({
 
   return (
     <Layout pageTitle="Welcome to Crown Jewels!">
-
       <section className="mx-8 font-Neuton text-some-kind-of-purple">
         <article>
-
           <div
-            className="font-Poppins italic w-[80%] mx-auto text-s-orange mb-8 text-lg text-center"
+            className="font-Poppins w-[80%] mx-auto text-s-orange mb-8 text-lg text-center"
             dangerouslySetInnerHTML={{
               __html: homeFields.description,
             }}
@@ -29,9 +28,7 @@ const HomePage = ({
         </article>
 
         <article className="flex flex-row justify-center">
-
           <div className="relative h-[500px] w-[980px]">
-
             <div className="absolute top-0 left-[0px] bg-minty-green w-96 h-96 rounded-full z-20 opacity-90"></div>
             <div  className="absolute top-[50px] left-[140px] w-96 h-96 rounded-full z-30">
               <GatsbyImage
@@ -42,7 +39,6 @@ const HomePage = ({
             </div>
 
             <div className="absolute top-0 left-[280px] w-96 h-96 bg-some-kind-of-purple rounded-full z-20 opacity-90"></div>
-
             <div className="absolute top-[50px] left-[450px] -left-[px]  z-40">
               <GatsbyImage 
                 className="w-96 h-96 rounded-full"
@@ -60,14 +56,14 @@ const HomePage = ({
           href={homeFields.callToAction.url}
           className="flex justify-center"
         >
-          <button className="tracking-widest  animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
+          <button className="tracking-widest animate-pulse bg-some-kind-of-purple px-4 py-2 font-bold text-baby-rose hover:scale-110 transition-all ease-in-out z-50">{homeFields.callToAction.title.toUpperCase()}</button>
         </a>
 
       </section>
 
       <section className="mt-8 mx-6 font-Neuton">
         <h1 className="uppercase text-4xl mb-6 text-center">Featured Royals</h1>
-        <p className="font-Poppins italic w-[80%] mx-auto text-s-orange mb-8 text-lg text-center">
+        <p className="font-Poppins w-[80%] mx-auto text-s-orange mb-8 text-lg text-center">
           Tired of swiping left on peasants? Upgrade to a royal match on our site.
         </p>
         <div className="grid grid-cols-3 gap-y-12 place-items-center">

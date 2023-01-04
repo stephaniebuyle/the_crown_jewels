@@ -12,7 +12,7 @@ const Footer = ({ siteTitle, companyInfo }) => {
     return (
         <div>
 
-            <footer className="bg-some-kind-of-purple text-baby-rose font-Roboto px-4 py-8 relative">
+            <footer className="bg-some-kind-of-purple text-baby-rose font-Poppins px-4 py-8 relative">
                 <Link to="/">
                     <section className="absolute right-12 -top-16">
                         <StaticImage
@@ -36,28 +36,27 @@ const Footer = ({ siteTitle, companyInfo }) => {
                     <article>
                         <p className="mb-2">Follow us:</p>
                         <div className="flex justify-start">
-                        <a
-                            className="pl-1 pr-2 hover:scale-110 transition-all ease-in-out"
-                            target="__blank"
-                            href={companyInfo.instagram}
-                        ><FaInstagram /></a>
-                        <a
-                           className="pr-2 hover:scale-110 transition-all ease-in-out"
-                            target="__blank"
-                            href={companyInfo.twitter}
-                        ><FaTwitter /></a>
-                        <a
-                            className="hover:scale-110 transition-all ease-in-out"
-                            target="__blank"
-                            href={companyInfo.facebook}
-                        ><FaFacebookF /></a>
+                            <a
+                                className="pl-1 pr-2 hover:scale-110 transition-all ease-in-out"
+                                target="__blank"
+                                href={companyInfo.instagram}
+                            ><FaInstagram /></a>
+                            <a
+                                className="pr-2 hover:scale-110 transition-all ease-in-out"
+                                target="__blank"
+                                href={companyInfo.twitter}
+                            ><FaTwitter /></a>
+                            <a
+                                className="hover:scale-110 transition-all ease-in-out"
+                                target="__blank"
+                                href={companyInfo.facebook}
+                            ><FaFacebookF /></a>
                         </div>
                     </article>
                     <article className="flex flex-col">
                         <Link className="hover:underline" to='/'>Home</Link>
                         <Link className="hover:underline" to='/royals'>Royals</Link>
                         <Link className="hover:underline" to='/contact'>Contact</Link>
-                       
                     </article>
                 </section>
             </footer>

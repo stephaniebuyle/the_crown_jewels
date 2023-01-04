@@ -7,6 +7,7 @@ import {
   hero
 } from "../../page.module.css"
 
+// Royal wordt geïmporteerd 
 const RoyalsPage = ({ data:
   {
     allWpRoyal: { edges },
@@ -18,7 +19,7 @@ const RoyalsPage = ({ data:
   const image = getImage(royalsFields.picture.localFile)
 
   return (
-    <Layout pageTitle="Crown Jewels">
+    <Layout pageTitle="The Crown Jewels">
       <section className="bg-minty-green relative">
         <article className="overflow-hidden">
           <div className={hero}>
